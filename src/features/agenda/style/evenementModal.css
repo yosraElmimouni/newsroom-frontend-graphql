@@ -1,0 +1,220 @@
+
+.evenement-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+  animation: evenement-fade-in 0.15s ease-out;
+}
+
+@keyframes evenement-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.evenement-modal-panel {
+  background: #ffffff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+  animation: evenement-slide-up 0.2s ease-out;
+}
+
+@keyframes evenement-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* --- En-tête --- */
+
+.evenement-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  border-radius: 14px 14px 0 0;
+}
+
+.evenement-modal-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.evenement-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.evenement-modal-close svg {
+  width: 18px;
+  height: 18px;
+}
+
+.evenement-modal-close:hover {
+  background: #f3f4f6;
+  color: #111827;
+}
+
+/* --- Formulaire --- */
+
+.evenement-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 20px 24px 24px;
+}
+
+.evenement-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.evenement-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.evenement-form-group label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.evenement-form-group input,
+.evenement-form-group select,
+.evenement-form-group textarea {
+  font: inherit;
+  font-size: 14px;
+  color: #111827;
+  background: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 9px 12px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.evenement-form-group textarea {
+  resize: vertical;
+  min-height: 72px;
+}
+
+.evenement-form-group input::placeholder,
+.evenement-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.evenement-form-group input:focus,
+.evenement-form-group select:focus,
+.evenement-form-group textarea:focus {
+  background: #ffffff;
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+/* Masquer les flèches natives du type=number pour l'ID de source */
+.evenement-form-group input[type='number']::-webkit-outer-spin-button,
+.evenement-form-group input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.evenement-form-group input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* --- Message d'erreur --- */
+
+.evenement-form-error {
+  margin: -4px 0 0;
+  padding: 10px 12px;
+  font-size: 13px;
+  color: #b91c1c;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+}
+
+/* --- Actions --- */
+
+.evenement-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.evenement-btn-secondary,
+.evenement-btn-primary {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+}
+
+.evenement-btn-secondary {
+  background: #ffffff;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.evenement-btn-secondary:hover {
+  background: #f3f4f6;
+}
+
+.evenement-btn-primary {
+  background: #6366f1;
+  color: #ffffff;
+  border: 1px solid #6366f1;
+}
+
+.evenement-btn-primary:hover {
+  background: #4f46e5;
+  border-color: #4f46e5;
+}
+
+.evenement-btn-secondary:active,
+.evenement-btn-primary:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .evenement-form-row {
+    grid-template-columns: 1fr;
+  }
+}
