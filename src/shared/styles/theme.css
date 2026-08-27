@@ -1,0 +1,249 @@
+/* theme.css — Design tokens partagés par toute l'application.
+   Palette dérivée de la page d'accueil (home.css) et de la page de connexion :
+   encre ardoise + accent bleu. Toutes les pages internes doivent s'appuyer
+   sur ces variables plutôt que de redéfinir leurs propres couleurs. */
+
+:root {
+  --brand-bg: #ffffff;
+  --brand-bg-alt: #f1f5f9;
+  --brand-bg-muted: #f8fafc;
+
+  --brand-ink: #0f172a;
+  --brand-ink-strong: #020617;
+  --brand-text: #334155;
+  --brand-text-soft: #475569;
+  --brand-muted: #64748b;
+
+  --brand-border: #e2e8f0;
+  --brand-border-strong: #cbd5e1;
+
+  --brand-accent: #2563eb;
+  --brand-accent-hover: #1d4ed8;
+  --brand-accent-dark: #1e3a8a;
+  --brand-accent-soft: #eff6ff;
+  --brand-accent-soft-strong: #dbeafe;
+  --brand-accent-soft-text: #1d4ed8;
+
+  --brand-on-dark: #f8fafc;
+  --brand-on-dark-muted: #94a3b8;
+
+  --brand-success: #15803d;
+  --brand-success-soft: #f0fdf4;
+  --brand-warning: #b45309;
+  --brand-warning-soft: #fef3e2;
+  --brand-danger: #b91c1c;
+  --brand-danger-soft: #fef2f2;
+
+  --brand-radius-sm: 0.5rem;
+  --brand-radius: 0.75rem;
+  --brand-radius-lg: 1rem;
+  --brand-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --brand-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.08);
+  --brand-font: -apple-system, 'Segoe UI', Inter, Roboto, sans-serif;
+}
+
+/* ---------- Coquille applicative partagée (Header / Sidebar / MainLayout) ---------- */
+
+.app-shell {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  font-family: var(--brand-font);
+  background: var(--brand-bg-alt);
+}
+
+.app-shell-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.app-shell-main {
+  flex: 1;
+  overflow-y: auto;
+  background: var(--brand-bg-alt);
+  padding: 1.75rem;
+}
+
+/* Header */
+.app-header {
+  display: flex;
+  height: 3.75rem;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--brand-border);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  padding: 0 1.5rem;
+  z-index: 10;
+}
+
+.app-header-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.app-header-mark {
+  display: flex;
+  height: 2rem;
+  width: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  background: var(--brand-ink);
+  color: #fff;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.app-header-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--brand-ink);
+  letter-spacing: -0.01em;
+}
+
+.app-header-user {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--brand-text);
+  outline: none;
+  transition: background-color 0.15s;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.app-header-user:hover,
+.app-header-user[data-state='open'] {
+  background: var(--brand-bg-alt);
+  border-color: var(--brand-border);
+}
+
+.app-header-avatar {
+  display: flex;
+  height: 1.75rem;
+  width: 1.75rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--brand-accent-soft);
+  color: var(--brand-accent-soft-text);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.app-header-menu {
+  min-width: 200px;
+  border-radius: var(--brand-radius-sm);
+  border: 1px solid var(--brand-border);
+  background: #fff;
+  padding: 0.35rem;
+  box-shadow: var(--brand-shadow);
+}
+
+.app-header-menu-role {
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--brand-muted);
+  outline: none;
+}
+
+.app-header-menu-sep {
+  margin: 0.3rem 0;
+  height: 1px;
+  background: var(--brand-border);
+}
+
+.app-header-menu-logout {
+  display: flex;
+  width: 100%;
+  cursor: pointer;
+  align-items: center;
+  border-radius: 0.375rem;
+  padding: 0.5rem 0.6rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--brand-danger);
+  outline: none;
+}
+
+.app-header-menu-logout:hover,
+.app-header-menu-logout[data-highlighted] {
+  background: var(--brand-danger-soft);
+}
+
+/* Sidebar */
+.app-sidebar {
+  display: flex;
+  width: 15.5rem;
+  flex-shrink: 0;
+  flex-direction: column;
+  gap: 0.25rem;
+  background: var(--brand-ink);
+  padding: 1.25rem 0.85rem;
+}
+
+.app-sidebar-eyebrow {
+  padding: 0 0.6rem;
+  margin-bottom: 0.5rem;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--brand-on-dark-muted);
+}
+
+.app-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 0.5rem;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #cbd5e1;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.app-sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+}
+
+.app-sidebar-link.is-active {
+  background: var(--brand-accent);
+  color: #fff;
+  box-shadow: var(--brand-shadow-sm);
+}
+
+.app-sidebar-dot {
+  height: 0.4rem;
+  width: 0.4rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  background: currentColor;
+  opacity: 0.55;
+}
+
+.app-sidebar-link.is-active .app-sidebar-dot {
+  opacity: 1;
+}
+
+/* Loading fallback used by the router's Suspense boundary */
+.app-loading {
+  padding: 1.5rem;
+  font-size: 0.875rem;
+  color: var(--brand-muted);
+}
