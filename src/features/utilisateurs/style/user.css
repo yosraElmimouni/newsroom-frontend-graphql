@@ -1,0 +1,246 @@
+/* ==========================================================================
+   AddUserPage.css
+   Conversion des classes Tailwind du composant AddUserPage en CSS classique.
+   Pense à remplacer les classNames dans le JSX par les classes ci-dessous
+   (ou à les combiner) si tu veux abandonner Tailwind pour ce composant.
+   ========================================================================== */
+
+/* Conteneur de page */
+.page {
+  padding: 1.5rem;
+}
+
+/* --- Écran de confirmation --- */
+
+.success-card {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 28rem; /* max-w-md */
+  border-radius: 0.5rem; /* rounded-lg */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  background-color: #ffffff;
+  padding: 2rem; /* p-8 */
+  text-align: center;
+}
+
+.success-icon-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem; /* mb-4 */
+  display: flex;
+  height: 3rem; /* h-12 */
+  width: 3rem; /* w-12 */
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px; /* rounded-full */
+  background-color: #eff6ff; /* bg-blue-50 */
+  color: #2563eb; /* text-blue-600 */
+}
+
+.success-icon {
+  height: 1.5rem; /* h-6 */
+  width: 1.5rem; /* w-6 */
+}
+
+.success-title {
+  margin-bottom: 0.25rem; /* mb-1 */
+  font-size: 1rem; /* text-base */
+  font-weight: 600; /* font-semibold */
+  color: #111827; /* text-gray-900 */
+}
+
+.success-subtitle {
+  margin-bottom: 1.5rem; /* mb-6 */
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* text-gray-500 */
+}
+
+.success-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.btn-secondary {
+  border-radius: 0.375rem; /* rounded-md */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  font-size: 0.875rem; /* text-sm */
+  font-weight: 500; /* font-medium */
+  color: #374151; /* text-gray-700 */
+  background-color: #ffffff;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #f9fafb; /* hover:bg-gray-50 */
+}
+
+/* --- En-tête de page --- */
+
+.back-link {
+  margin-bottom: 0.25rem; /* mb-1 */
+  display: inline-block;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 500; /* font-medium */
+  color: #6b7280; /* text-gray-500 */
+  text-decoration: none;
+}
+
+.back-link:hover {
+  color: #374151; /* hover:text-gray-700 */
+}
+
+.page-title {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 600; /* font-semibold */
+  color: #111827; /* text-gray-900 */
+}
+
+.page-subtitle {
+  font-size: 0.875rem; /* text-sm */
+  color: #6b7280; /* text-gray-500 */
+}
+
+/* --- Formulaire --- */
+
+.user-form {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  max-width: 80rem; /* max-w-7xl */
+  border-radius: 1rem; /* rounded-2xl */
+  border: 1px solid #e5e7eb; /* border-gray-200 */
+  background-color: #ffffff;
+  padding: 2rem; /* p-8 */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+}
+
+.form-row {
+  margin-bottom: 1rem; /* mb-4 */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem; /* gap-4 */
+}
+
+@media (min-width: 640px) {
+  .form-row {
+    grid-template-columns: repeat(2, 1fr); /* sm:grid-cols-2 */
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.form-group--role {
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+.form-label {
+  margin-bottom: 0.25rem; /* mb-1 */
+  display: block;
+  font-size: 0.875rem; /* text-sm */
+  color: #374151; /* text-gray-700 */
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  border-radius: 0.375rem; /* rounded-md */
+  border: 1px solid #d1d5db; /* border-gray-300 */
+  padding: 0.5rem 0.75rem; /* px-3 py-2 */
+  font-size: 0.875rem; /* text-sm */
+  outline: none;
+  background-color: #ffffff;
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: #3b82f6; /* focus:border-blue-500 */
+  box-shadow: 0 0 0 1px #3b82f6; /* focus:ring-1 focus:ring-blue-500 */
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* gap-2 */
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.page-header-info {
+  flex: 1;
+}
+
+.btn-primary {
+  border-radius: 0.375rem;
+  background-color: #2563eb;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: #1d4ed8;
+}
+
+.btn-primary-annuler {
+  border-radius: 0.375rem;
+  background-color: #ffffff;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+  border: 1px solid #d1d5db;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  white-space: nowrap;
+}
+
+.btn-primary-annuler:hover {
+  background-color: #f9fafb;
+}
+
+.page-header-back-link {
+  display: flex;
+  font-size: 12px;
+  font-weight: 500;
+  color: #6b7280;
+  height: 20px;
+  gap: 5px;
+  margin-bottom: 30px;
+}
+.page-header-back-link:hover {
+  color: #374151;
+}
+
+.user-avatar{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #dbe5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #001c48;
+}
