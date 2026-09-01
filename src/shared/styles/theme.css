@@ -154,7 +154,7 @@
   padding: 0.5rem 0.6rem;
   font-size: 0.75rem;
   font-weight: 600;
-  text-transform: uppercase;
+  text-transform:lowercase;
   letter-spacing: 0.06em;
   color: var(--brand-muted);
   outline: none;
@@ -197,12 +197,11 @@
 
 .app-sidebar-eyebrow {
   padding: 0 0.6rem;
-  margin-bottom: 0.5rem;
-  font-size: 10.5px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--brand-on-dark-muted);
+  margin-bottom: 20px;
+  font-size: 14.5px;
+  font-weight: 500;
+  color:#64748b;
+  text-align: center;
 }
 
 .app-sidebar-link {
@@ -247,3 +246,21 @@
   font-size: 0.875rem;
   color: var(--brand-muted);
 }
+.app-sidebar-footer {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.app-sidebar-user {
+  padding: 0 0.6rem;
+  font-size: 13px;
+  font-weight: 200;
+  text-transform: lowercase;
+  color: var(--brand-on-dark-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+

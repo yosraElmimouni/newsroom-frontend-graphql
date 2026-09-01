@@ -16,7 +16,6 @@ export function Header() {
         <DropdownMenu.Trigger asChild>
           <button className="app-header-user">
             <span className="app-header-avatar">{initial}</span>
-            {user?.email}
           </button>
         </DropdownMenu.Trigger>
 
@@ -26,7 +25,7 @@ export function Header() {
             sideOffset={8}
             className="app-header-menu data-[state=open]:animate-in data-[state=open]:fade-in"
           >
-            <DropdownMenu.Item className="app-header-menu-role">{user?.role.name}</DropdownMenu.Item>
+            <DropdownMenu.Item className="app-header-menu-role">{user?.email}</DropdownMenu.Item>
             <DropdownMenu.Separator className="app-header-menu-sep" />
             <DropdownMenu.Item onSelect={logout} className="app-header-menu-logout">
               Se déconnecter
